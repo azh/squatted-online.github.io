@@ -37,11 +37,115 @@
       background-color: #f00;
     }
   }
+  #portal {
+    font-size: 1.2em;
+    transition: transform .1s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  #portal:hover {
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+
+  #squattonia {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    max-height: 90%;
+    margin: 20px 0 20px 0;
+  }
+
+  #squattonia .map {
+    border: 1px solid orchid;
+    max-width: 15%;
+    overflow: auto;
+    white-space: nowrap;
+    margin-right: 10px;
+  }
+
+  #squattonia .map .directory {
+    padding: 5px;
+    width: 100%;
+  }
+
+  #squattonia #navigation {
+    min-width: 50%;
+    border: 1px solid orchid;
+  }
+
+  #squattonia .rcol {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  #output {
+    width: 100%;
+    min-height: 60%;
+    border: 1px solid orchid;
+    margin-bottom: 10px;
+    padding: 10px 0 0 10px;
+    overflow-y: auto;
+  }
+
+  #output p {
+    text-align: left;
+    padding-bottom: 5px;
+  }
+
+  #actions {
+    width: 100%;
+    height: 100%;
+    border: 1px solid orchid;
+    overflow-y: auto;
+  }
+
+  .container {
+    max-width: none;
+    width: 100%;
+  }
+
+  #directory canvas {
+    position: relative;
+    z-index: -1;
+  }
+
+  .p5Canvas {
+    display: none;
+  }
+
+  #navigation .p5Canvas {
+    display: initial !important;
+  }
+
+  .clicked {
+    border: 1px dotted orchid;
+  }
+
+  .timestamp {
+    margin-left: -3px;
+    font-style: normal;
+  }
+
+  .alert {
+    font-style: oblique;
+  }
+
+  .selected {
+    background-color: orchid;
+  }
 </style>
 
 <body>
 
-  <div class="bg-iframe">
+  <!--UNCOMMENT THIS AFTER FINISHING!!! <div class="bg-iframe">
     <div id="pawsmenu"></div>
     <script type="text/javascript">
       const options = {
@@ -52,109 +156,122 @@
       const player = new Twitch.Player("pawsmenu", options);
       player.setVolume(0.5);
     </script>
-  </div>
+  </div> -->
   <!-- <div class="utopia">
   </div> -->
   <div class="container">
     <div class="title-center">
-      <h2>squatted.online</h2> <br>
-      online and offline exhibition space for
+      <h2>the lands of squattonia</h2> <br>
+      space for
       <br>
       <a href="https://thewrong.org/" target="_blank" rel="noopener noreferrer">the wrong digital art biennale</a>
       <br>
-
-      <div class="map">
-        <h1 style="text-align: center; font-family: 'pixel', monospace;">SQUAT MAP 🗺</h1>
-        . <br>
-        ├── index.html => by Michael Berto<br>
-        ├── <a href="call-for-artists.txt" class="blink">call-for-artists.txt</a> <br>
-        ├── staircase <br>
-        │ ├── cellar <br>
-        │ │ └── <a href="staircase/cellar/rave_cave/" class="blink">rave_cave</a> <br>
-        │ │ &nbsp;&nbsp;├── drum_samples <br>
-        │ │ &nbsp;&nbsp;│ ├── bass_sample.mp3 <br>
-        │ │ &nbsp;&nbsp;│ ├── clap_sample.mp3 <br>
-        │ │ &nbsp;&nbsp;│ └── hh_sample.mp3 <br>
-        │ │ &nbsp;&nbsp;├── index.html <br>
-        │ │ &nbsp;&nbsp;├── sketch.js <br>
-        │ │ &nbsp;&nbsp;└── style.css <br>
-        │ ├── floor_1 <br>
-        │ │ ├── <a href="staircase/floor_1/cinema/" class="blink">cinema</a> <br>
-        │ │ │ ├── index.html => by Noviki <br>
-        │ │ │ └── style.css <br>
-        │ │ └── library <br>
-        │ │ ├── <a href="staircase/floor_1/library/desk/index.html" class="blink">desk</a> <br>
-        │ │ │ ├── index.html => by Tsila Hassine <br>
-        │ │ │ └── style.css <br>
-        │ │ ├── fonts <br>
-        │ │ │ ├── PxPlus_VGA_SquarePx.ttf <br>
-        │ │ │ └── PxPlus_VGA_SquarePx.woff <br>
-        │ │ ├── img <br>
-        │ │ │ ├── pirate.gif <br>
-        │ │ │ ├── squatted.png <br>
-        │ │ │ └── utopia.jpg <br>
-        │ │ └── readings <br>
-        │ │ &nbsp;&nbsp;├── Everything_I_know_about_technocapitalism.pdf <br>
-        │ │ &nbsp;&nbsp;├── Mudu-2004-Antipode.pdf <br>
-        │ │ &nbsp;&nbsp;├── Mudu-2004-Antipode.rtf <br>
-        │ │ &nbsp;&nbsp;└── The de commodification of urban space and the occupied social centres in Italy.pdf <br>
-        │ └── <a href="/staircase/meta-mezzanine/" class="blink">meta-mezzanine</a> <br>
-        │ │ &nbsp;&nbsp;└── index.html => by Alex Zhang <br>
-        │ └── floor_2 <br>
-        │ &nbsp;└── game room <br>
-        │ &nbsp;&nbsp;└── <a href="http://xn--1xa.wtf/nopeplanet/index.php" class="blink">nopeplanet</a> <br>
-        │ &nbsp;&nbsp;&nbsp;├── index.php => by Theetat <br>
-        │ &nbsp;&nbsp;&nbsp;├── nopeinc.png <br>
-        │ &nbsp;&nbsp;&nbsp;└── style.css <br>
-        ├── <a href="/garden/" class="blink">neglected_garden</a> <br>
-        │ &nbsp;&nbsp;└── BEMUSED 90,63% => by La Scuola Open Source <br>
-        ├── js <br>
-        │ ├── libraries <br>
-        │ │ └── jquery-3.4.0.min.js <br>
-        │ └── scripts.js <br>
-        ├── .gitignore <br>
-        ├── README.md <br>
-        └── style.css <br>
+      <div id="squattonia">
+        <div class="map">
+          <div id="directory">
+            <a id="portal" href="#" onclick="revealSquattonia()"a>☻</a> <br>
+            ├── index.html => by Michael Berto<br>
+            ├── <a href="call-for-artists.txt" class="blink">call-for-artists.txt</a> <br>
+            ├── staircase <br>
+            │ ├── cellar <br>
+            │ │ └── <a href="staircase/cellar/rave_cave/" class="blink">rave_cave</a> <br>
+            │ │ &nbsp;&nbsp;├── drum_samples <br>
+            │ │ &nbsp;&nbsp;│ ├── bass_sample.mp3 <br>
+            │ │ &nbsp;&nbsp;│ ├── clap_sample.mp3 <br>
+            │ │ &nbsp;&nbsp;│ └── hh_sample.mp3 <br>
+            │ │ &nbsp;&nbsp;├── index.html <br>
+            │ │ &nbsp;&nbsp;├── sketch.js <br>
+            │ │ &nbsp;&nbsp;└── style.css <br>
+            │ ├── floor_1 <br>
+            │ │ ├── <a href="staircase/floor_1/cinema/" class="blink">cinema</a> <br>
+            │ │ │ ├── index.html => by Noviki <br>
+            │ │ │ └── style.css <br>
+            │ │ └── library <br>
+            │ │ ├── <a href="staircase/floor_1/library/desk/index.html" class="blink">desk</a> <br>
+            │ │ │ ├── index.html => by Tsila Hassine <br>
+            │ │ │ └── style.css <br>
+            │ │ ├── fonts <br>
+            │ │ │ ├── PxPlus_VGA_SquarePx.ttf <br>
+            │ │ │ └── PxPlus_VGA_SquarePx.woff <br>
+            │ │ ├── img <br>
+            │ │ │ ├── pirate.gif <br>
+            │ │ │ ├── squatted.png <br>
+            │ │ │ └── utopia.jpg <br>
+            │ │ └── readings <br>
+            │ │ &nbsp;&nbsp;├── Everything_I_know_about_technocapitalism.pdf <br>
+            │ │ &nbsp;&nbsp;├── Mudu-2004-Antipode.pdf <br>
+            │ │ &nbsp;&nbsp;├── Mudu-2004-Antipode.rtf <br>
+            │ │ &nbsp;&nbsp;└── The de commodification of urban space and the occupied social centres in Italy.pdf <br>
+            │ └── <a href="/staircase/meta-mezzanine/" class="blink">meta-mezzanine</a> <br>
+            │ │ &nbsp;&nbsp;└── index.html => by Alex Zhang <br>
+            │ └── floor_2 <br>
+            │ &nbsp;└── game room <br>
+            │ &nbsp;&nbsp;└── <a href="http://xn--1xa.wtf/nopeplanet/index.php" class="blink">nopeplanet</a> <br>
+            │ &nbsp;&nbsp;&nbsp;├── index.php => by Theetat <br>
+            │ &nbsp;&nbsp;&nbsp;├── nopeinc.png <br>
+            │ &nbsp;&nbsp;&nbsp;└── style.css <br>
+            ├── <a href="/garden/" class="blink">neglected_garden</a> <br>
+            │ &nbsp;&nbsp;└── BEMUSED 90,63% => by La Scuola Open Source <br>
+            ├── js <br>
+            │ ├── libraries <br>
+            │ │ └── jquery-3.4.0.min.js <br>
+            │ └── scripts.js <br>
+            ├── .gitignore <br>
+            ├── README.md <br>
+            └── style.css <br>
+          </div>
+        </div>
+        <div id="navigation"></div>
+        <div class="rcol">
+          <div id="output">
+            <h3>=============================</h3>
+            <h4><b>WELCOME TO THE LANDS OF SQUATTONIA</b></h4>
+            <h3>=============================</h3>
+          </div>
+          <div id="actions">
+            <p>
+              current residents of ...:
+              <ul>
+                <!-- <li>
+                  <a href="https://kenokeno.bingo/">K E N O</a>
+                </li>
+                <li>
+                  <a href="https://alex.zyzhang.me/">ALEX ZHANG</a>
+                </li> -->
+                <li>
+                  <a href="http://virtualpalestine.net/">ISAN COLLECTIVE</a>
+                </li>
+                <li>
+                  <a href="https://pitscher.net">pitscher</a>
+                </li>
+                <li>
+                  <a href="http://www.noviki.net/">Noviki</a>
+                </li>
+                <li>
+                  <a href="http://www.maximstaehelin.ch/">Maxim Stähelin</a>
+                </li>
+                <li>
+                  <a href="https://missdata.org/">Tsila Hassine</a>
+                </li>
+                <li>
+                  <a href="https://www.winnieyoe.com/resilience">Winnie Yoe</a>
+                </li>
+                <li>
+                  <a href="http://www.lascuolaopensource.xyz/"> La Scuola Open Source</a>
+                </li>
+                <li>
+                  <a href="http://www.xn--1xa.wtf">Theetat Thunkijjanukij</a>
+                </li>
+                <li>
+                  <a href="http://www.pawsmenu.net/">Michael Berto</a>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
       </div>
       <div>
-        <p>
-          current residents of the digital squat:
-          <ul>
-            <!-- <li>
-              <a href="https://kenokeno.bingo/">K E N O</a>
-            </li>
-            <li>
-              <a href="https://alex.zyzhang.me/">ALEX ZHANG</a>
-            </li> -->
-            <li>
-              <a href="http://virtualpalestine.net/">ISAN COLLECTIVE</a>
-            </li>
-            <li>
-              <a href="https://pitscher.net">pitscher</a>
-            </li>
-            <li>
-              <a href="http://www.noviki.net/">Noviki</a>
-            </li>
-            <li>
-              <a href="http://www.maximstaehelin.ch/">Maxim Stähelin</a>
-            </li>
-            <li>
-              <a href="https://missdata.org/">Tsila Hassine</a>
-            </li>
-            <li>
-              <a href="https://www.winnieyoe.com/resilience">Winnie Yoe</a>
-            </li>
-            <li>
-              <a href="http://www.lascuolaopensource.xyz/"> La Scuola Open Source</a>
-            </li>
-            <li>
-              <a href="http://www.xn--1xa.wtf">Theetat Thunkijjanukij</a>
-            </li>
-            <li>
-              <a href="http://www.pawsmenu.net/">Michael Berto</a>
-            </li>
-          </ul>
-        </p>
+        
       </div>
     </div>
 
@@ -168,7 +285,18 @@
     <div class="vplogo"></div>
     <img src="staircase/floor_1/library/img/utopia.jpg" />
   </div> -->
+  <script src="js/libraries/jquery-3.4.0.min.js"></script>
+  <script src="js/libraries/p5.js"></script>
+  <script src="js/libraries/Tone.js"></script>
+  <script src="js/libraries/springy.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/squattonia/util.js"></script>
+  <script src="js/squattonia/world.js"></script>
+  <script src="js/squattonia/ui/directory.js"></script>
+  <script src="js/squattonia/ui/navigation.js"></script>
+  <script src="js/squattonia/ui/renderer.js"></script>
+  <script src="js/squattonia/ui/output.js"></script>
+  <script src="js/squattonia/main.js"></script>
 </body>
 
 </html>

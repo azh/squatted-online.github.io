@@ -1,0 +1,6 @@
+[
+    {
+        "name": "Alex's Shack",
+        "location": "#shack" // this can be an id, class or tag
+    },
+]
