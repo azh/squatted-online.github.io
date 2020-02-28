@@ -9,6 +9,12 @@ const UI_OUTPUT = gfx => {
         console.log("Loaded output")
     }
 
+    gfx.stateChanged = (key, val) => {
+        if (key === "overwhelming") {
+            gfx.newEntry("p", "There's an overwhelming amount of info being displayed. You're going to have to feel things out.")
+        }
+    }
+
     gfx.timestamp = () => (new Date(Date.now() - _start_time)).toISOString().substr(11, 8),
     
     gfx.newEntry = (tag, data="", timestamp=true, styles={}) => {
@@ -37,6 +43,7 @@ const UI_OUTPUT = gfx => {
         }
         el.parent(_root)
         el.html(data, true)
+        _root.elt.scrollTop = _root.elt.scrollHeight
         return el
     }
 }

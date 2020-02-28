@@ -14,7 +14,7 @@
 //      - yourself (replacing a fragment with another one generated through markov chain?)
 //      - by convincing entities
 // - manipulating entities
-//      - some shin megami tensei thing like transforming them to other modalities or combining them
+//      - some smt shit like transforming them to other modalities or combining them
 //      - learn their natural patterns
 //      - tame them
 
@@ -41,10 +41,10 @@
 //  - rate of movement
 //  - rate of data consumption
 // - stop tokens: tokens that are irrelevant to it
-// - delimit length
-//  - analogous to physical size
+// - delimiters: bytes that it reads as the spaces between intervals of data
 // - desired tokens
-//  -
+//  - the tokens it will consume
+//  - the more common a token is in data the lower the likelihood an entity will desire it
 // - actions
 //  - movement
 //  - mutation
@@ -60,7 +60,6 @@
 // cognition map: "radar" learning vector quantization/self-organizing map/???
 //  - like knn except when aggregating neighbours two weightings are considered
 //      1. rating weighting: each point in space tracks the success rating of all actions
-//          - you get this for free from the probability distribution of a naive bayes classifier
 //          - consecutive successes/failures have a slight curve to them so they kind of snowball
 //      2. distance weighting: nearby points matter more than further ones
 //  - fans outwards triggering points until one activates like a radar
@@ -78,6 +77,6 @@
 // you're in a messed up version, return to normal (shown in the directory)
 // deviance: how much the directory differs from normal
 
-// We all know that a squat isn't possible without any residents. 
-// However, a digital squat not only has human residents, but also non-human residents--pieces of information that, even if they want to be free, are relegated to being little more than virtual drywall.
-// In THE LANDS OF SQUATTONIA, these other squatters have a life of their own. Get to know them, and see the squat their way.
+
+window.LOCATION = null; // the place the player is in
+

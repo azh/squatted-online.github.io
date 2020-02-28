@@ -1,9 +1,17 @@
 // Handles the navigation pane
 
 const UI_NAVIGATION = gfx => {
-    let _root = gfx.select('#navigation')
+    gfx.MODES = {
+        map: "navmode_map", // default
+        text: "navmode_text",
+        image: "navmode_image"
+    }
+
+    gfx.ROOT = gfx.select('#navigation')
+    gfx.SCREEN_OFFSET = new Springy.Vector(0, 0)
+    gfx.CANVAS = (gfx.CANVAS === undefined) ? null : gfx.CANVAS
+
     let _update = true
-    let _canvas = null
     let _place_ids = new Map()
     let _place_coords = new Map()
     let _selected_node = null
@@ -12,7 +20,14 @@ const UI_NAVIGATION = gfx => {
     let _screen_divisor = 40
 
     let _spr_graph = new Springy.Graph()
+    let _root_node = _spr_graph.newNode({
+        label: ".",
+        data: {
+            place: new Place(".")
+        }
+    })
     let _spr_layout = new Springy.Layout.ForceDirected(_spr_graph, 100.0, 6000.0, 0.2)
+    let _spr_complete = false
     let _spr_renderer = new Springy.Renderer(
         _spr_layout,
         () => gfx.clear(),
@@ -58,21 +73,29 @@ const UI_NAVIGATION = gfx => {
                 gfx.text(node.data.label, pos.x, pos.y)
             }
             _place_coords.set(node.data.place, pos)
+            if (_spr_complete) {
+                _spr_renderer.stop()
+            }
+        },
+        () => {
+            _spr_complete = true
         })
 
     gfx.setup = () => {
+        window.NAVLAYOUT = _spr_layout
         console.log("Loaded navigation")
         console.log(window.Springy)
-        _canvas = gfx.createCanvas(_root.width - 2, _root.height - 2)
-        _canvas.parent(_root)
-        _canvas.position(_root.elt.offsetLeft + 1, _root.elt.offsetTop + 1)
-        this.initMappings()
-        _spr_renderer.start()
+        gfx.CANVAS = gfx.createCanvas(gfx.ROOT.width - 2, gfx.ROOT.height - 2)
+        gfx.CANVAS.parent(gfx.ROOT)
+        gfx.CANVAS.position(gfx.ROOT.elt.offsetLeft + 1, gfx.ROOT.elt.offsetTop + 1)
+        // this.initMappings(window.STATE.mappings)
+        this.initMappingsDemo()
+        gfx.startGraph()
     }
 
     gfx.draw = () => {
         let rt = gfx.select('#navigation')
-        if (rt.height !== _root.height || rt.width !== _root.width) {
+        if (rt.height !== gfx.ROOT.height || rt.width !== gfx.ROOT.width) {
             console.log("Navigation needs to be resized!")
             gfx.windowResized()
             _update = true
@@ -80,34 +103,77 @@ const UI_NAVIGATION = gfx => {
         if (_update) {
             gfx.noFill()
             gfx.stroke("#da70d6")
-            gfx.circle(_canvas.width / 2, _canvas.height / 2, 25)
+            gfx.circle(gfx.CANVAS.width / 2, gfx.CANVAS.height / 2, 25)
             _update = false;
         }
     }
 
+    gfx.startGraph = () => {
+        if (window.STATE.navigation.mode === gfx.MODES.map) {
+            _spr_renderer.start()
+        }
+    }
+
     gfx.mousePressed = () => {
-        _selected_node = this.getClosestNode(new Springy.Vector(gfx.mouseX, gfx.mouseY))
-        window.setState("selected", _selected_node !== null ? _selected_node.data.place : null)
+        if (gfx.mouseX >= 0 && gfx.mouseX <= gfx.ROOT.width &&
+            gfx.mouseY >= 0 && gfx.mouseY <= gfx.ROOT.height) {
+                gfx.startGraph()
+                _selected_node = this.getClosestNode(new Springy.Vector(gfx.mouseX, gfx.mouseY))
+                let sel = _selected_node !== null ? _selected_node.data.place : null
+                if (window.STATE.selected !== sel) {
+                    window.setState("selected", sel)
+                }
+            }
+    }
+
+    gfx.mouseDragged = () => {
+        if (gfx.mouseX >= 0 && gfx.mouseX <= gfx.ROOT.width &&
+            gfx.mouseY >= 0 && gfx.mouseY <= gfx.ROOT.height) {
+                gfx.SCREEN_OFFSET.x += gfx.mouseX - gfx.pmouseX
+                gfx.SCREEN_OFFSET.y += gfx.mouseY - gfx.pmouseY
+            }
+        gfx.startGraph()
     }
 
     gfx.windowResized = () => {
-        _root = gfx.select('#navigation')
-        gfx.resizeCanvas(_root.width - 2, _root.height - 2);
-        _canvas.position(_root.elt.offsetLeft + 1, _root.elt.offsetTop + 1)
+        gfx.ROOT = gfx.select('#navigation')
+        gfx.resizeCanvas(gfx.ROOT.width - 2, gfx.ROOT.height - 2);
+        gfx.CANVAS.position(gfx.ROOT.elt.offsetLeft + 1, gfx.ROOT.elt.offsetTop + 1)
         _update = true;
     }
 
-    gfx.stateChanged = (prop, value) => {
-        if (prop === "mappings") {
-            this.updateMappings(window.STATE.mappings)
+    gfx.stateChanged = (key, val) => {
+        if (key === "mappings") {
+            gfx.startGraph()
+            this.updateMappings(val)
+        } else if (key === "navigation.mode") {
+            if (val === "navmode_text") {
+                if (window.STATE.gifts.indexOf("gift_text") !== -1) {
+                    _spr_renderer.stop()
+                    UI_NAVIGATION_TEXT(gfx)
+                } else {
+                    window.UI.output.newEntry("p", "Slow down, and try claiming your present first.")
+                    window.setState(["navigation", "mode"], "navmode_map")
+                }
+            }        
+            if (val === "navmode_map") {
+                _spr_renderer.start()
+            }        
+        } else if (key === "gifts") {
+            gfx.startGraph()
         }
     }
 
     this.initMappings = mappings => {
-        let root_node = _spr_graph.newNode({
-            label: "."
-        })
-        _place_ids.set(".", root_node.id)
+        _place_ids.set(".", _root_node.id)
+        for (mp of mappings) {
+            this.updateMappings(mp)
+        }
+        console.log(_spr_graph)
+    }
+
+    this.initMappingsDemo = () => {
+        _place_ids.set(".", _root_node.id)
         console.log(window.SYS.world.lands)
         for (l of window.SYS.world.lands) {
             let node = _spr_graph.newNode({
@@ -122,14 +188,28 @@ const UI_NAVIGATION = gfx => {
                 })
                 _spr_graph.newEdge(tnode, node)
             } else {
-                _spr_graph.newEdge(root_node, node)
+                _spr_graph.newEdge(_root_node, node)
             }
         }
         console.log(_spr_graph)
     }
 
-    this.updateMappings = mappings => {
-        // ...
+    this.updateMappings = mp => {
+        console.log(mp)
+        if (mp[1] !== null) {
+            let node = mp[0] === null ? _root_node : _spr_graph.newNode({ label: mp[0].name, place: mp[0] })
+            if (mp[0] !== null) {
+                _place_ids.set(mp[0].name, node.id)
+            }
+            let tnode = _place_ids.has(mp[1].name) ? _spr_graph.nodes[_place_ids.get(mp[1].name)] : _spr_graph.newNode({
+                label: mp[1].name,
+                place: mp[1]
+            })
+            if (!_place_ids.has(mp[1].name)) {
+                _place_ids.set(mp[1].name, tnode.id)
+            }
+            _spr_graph.newEdge(node, tnode)
+        }
     }
 
     this.getClosestNode = pos => {
@@ -146,9 +226,9 @@ const UI_NAVIGATION = gfx => {
     }
 
     this.toScreen = p => {
-        let sx = p.x * _root.width / _screen_divisor + _root.width / 2
-        let sy = p.y * _root.height / _screen_divisor + _root.height / 2
-        return new Springy.Vector(sx, sy)
+        let sx = p.x * gfx.ROOT.width / _screen_divisor + gfx.ROOT.width / 2
+        let sy = p.y * gfx.ROOT.height / _screen_divisor + gfx.ROOT.height / 2
+        return (new Springy.Vector(sx, sy)).add(gfx.SCREEN_OFFSET)
     }
 
     this.star = (x, y, radius1, radius2, npoints) => {

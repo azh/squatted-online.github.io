@@ -131,6 +131,7 @@
 
   .timestamp {
     margin-left: -3px;
+    margin-top: 5px;
     font-style: normal;
   }
 
@@ -140,6 +141,14 @@
 
   .selected {
     background-color: orchid;
+  }
+
+  #actions {
+    padding-top: 1em
+  }
+
+  #action_list {
+    padding-top: 1em;
   }
 </style>
 
@@ -229,44 +238,6 @@
             <h3>=============================</h3>
           </div>
           <div id="actions">
-            <p>
-              current residents of ...:
-              <ul>
-                <!-- <li>
-                  <a href="https://kenokeno.bingo/">K E N O</a>
-                </li>
-                <li>
-                  <a href="https://alex.zyzhang.me/">ALEX ZHANG</a>
-                </li> -->
-                <li>
-                  <a href="http://virtualpalestine.net/">ISAN COLLECTIVE</a>
-                </li>
-                <li>
-                  <a href="https://pitscher.net">pitscher</a>
-                </li>
-                <li>
-                  <a href="http://www.noviki.net/">Noviki</a>
-                </li>
-                <li>
-                  <a href="http://www.maximstaehelin.ch/">Maxim Stähelin</a>
-                </li>
-                <li>
-                  <a href="https://missdata.org/">Tsila Hassine</a>
-                </li>
-                <li>
-                  <a href="https://www.winnieyoe.com/resilience">Winnie Yoe</a>
-                </li>
-                <li>
-                  <a href="http://www.lascuolaopensource.xyz/"> La Scuola Open Source</a>
-                </li>
-                <li>
-                  <a href="http://www.xn--1xa.wtf">Theetat Thunkijjanukij</a>
-                </li>
-                <li>
-                  <a href="http://www.pawsmenu.net/">Michael Berto</a>
-                </li>
-              </ul>
-            </p>
           </div>
         </div>
       </div>
@@ -289,13 +260,20 @@
   <script src="js/libraries/p5.js"></script>
   <script src="js/libraries/Tone.js"></script>
   <script src="js/libraries/springy.js"></script>
+  <script src="js/libraries/bloomfilter.js"></script>
+  <script src="js/libraries/hyperloglog.js"></script>
+  <script src="js/libraries/kdTree-min.js"></script>
+  <script src="js/libraries/naivebayes.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/squattonia/util.js"></script>
   <script src="js/squattonia/world.js"></script>
+  <script src="js/squattonia/action.js"></script>
   <script src="js/squattonia/ui/directory.js"></script>
   <script src="js/squattonia/ui/navigation.js"></script>
+  <script src="js/squattonia/ui/navigation_text.js"></script>
   <script src="js/squattonia/ui/renderer.js"></script>
   <script src="js/squattonia/ui/output.js"></script>
+  <script src="js/squattonia/ui/actions_ui.js"></script>
   <script src="js/squattonia/main.js"></script>
 </body>
 

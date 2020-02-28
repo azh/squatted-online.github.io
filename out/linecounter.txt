@@ -1,0 +1,94 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2020-02-26 05:35:10
+count workspace : /home/azh/Dropbox/Programming/Repos/squatted-online.github.io
+total files : 68
+total code lines : 81044
+total comment lines : 40420
+total blank lines : 5944
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |             28|             19|              7|  0.035|
+   |          .html|            697|             54|             79|   0.86|
+   |           .css|            307|             51|             41|   0.38|
+   |            .md|             45|              7|             33|  0.056|
+   |          .json|             11|              1|              0|  0.014|
+   |           .map|              2|              0|              0| 0.0025|
+   |           .txt|             39|              1|             26|  0.048|
+   |            .js|          76023|          33514|           5712|     94|
+   |           .rtf|              9|              0|              1|  0.011|
+   |           .pdf|           3883|           6773|             45|    4.8|
+   -------------------------------------------------------------------------
+.gitignore, code is 28, comment is 19, blank is 7.
+call-for-artists.txt, code is 39, comment is 1, blank is 26.
+garden/1.6daace69.jpg, it is a binary file.
+garden/2.52a2e5ec.jpg, it is a binary file.
+garden/3.dbde592f.jpg, it is a binary file.
+garden/4.b799729b.jpg, it is a binary file.
+garden/5.985abbc2.jpg, it is a binary file.
+garden/app.230c135e.js, code is 5, comment is 1, blank is 0.
+garden/app.230c135e.js.map, code is 1, comment is 0, blank is 0.
+garden/HKGrotesk-Bold.f1c52a22.otf, it is a binary file.
+garden/HKGrotesk-Regular.ce3b4cfb.otf, it is a binary file.
+garden/index.html, code is 1, comment is 0, blank is 0.
+garden/Le_Murmure-Regular_web.58883cf8.woff2, it is a binary file.
+garden/Le_Murmure-Regular_web.a0c62613.woff, it is a binary file.
+garden/style.95210df6.css, code is 1, comment is 1, blank is 0.
+garden/style.95210df6.css.map, code is 1, comment is 0, blank is 0.
+index copy.html, code is 180, comment is 10, blank is 21.
+index.html, code is 246, comment is 28, blank is 28.
+index_orig.html, code is 147, comment is 16, blank is 11.
+js/custom_places.json, code is 6, comment is 1, blank is 0.
+js/libraries/jquery-3.4.0.min.js, code is 1, comment is 2, blank is 0.
+js/libraries/p5.js, code is 66446, comment is 27663, blank is 5280.
+js/libraries/p5.min.js, code is 1, comment is 1, blank is 1.
+js/libraries/p5.sound.js, code is 7665, comment is 5202, blank is 16.
+js/libraries/p5.sound.min.js, code is 5, comment is 22, blank is 2.
+js/libraries/p5.voronoi.js, code is 426, comment is 190, blank is 120.
+js/libraries/rhill-voronoi-core.min.js, code is 116, comment is 4, blank is 0.
+js/libraries/springy.js, code is 488, comment is 151, blank is 116.
+js/libraries/Tone.js, code is 2, comment is 7, blank is 0.
+js/scripts.js, code is 8, comment is 1, blank is 0.
+js/squattonia/data.js, code is 7, comment is 2, blank is 7.
+js/squattonia/entity.js, code is 15, comment is 3, blank is 8.
+js/squattonia/game.js, code is 0, comment is 70, blank is 8.
+js/squattonia/gifts.js, code is 17, comment is 1, blank is 1.
+js/squattonia/main.js, code is 56, comment is 5, blank is 9.
+js/squattonia/people.js, code is 5, comment is 6, blank is 5.
+js/squattonia/squattonia copy.js, code is 93, comment is 72, blank is 33.
+js/squattonia/squattonia.js, code is 115, comment is 81, blank is 34.
+js/squattonia/ui.js, code is 4, comment is 1, blank is 2.
+js/squattonia/ui/directory.js, code is 81, comment is 5, blank is 6.
+js/squattonia/ui/navigation.js, code is 153, comment is 3, blank is 15.
+js/squattonia/ui/output.js, code is 37, comment is 1, blank is 4.
+js/squattonia/ui/renderer.js, code is 51, comment is 1, blank is 5.
+js/squattonia/util.js, code is 41, comment is 1, blank is 8.
+js/squattonia/world.js, code is 65, comment is 17, blank is 7.
+now.json, code is 5, comment is 0, blank is 0.
+README.md, code is 45, comment is 7, blank is 33.
+staircase/cellar/rave_cave/drum_samples/bass_sample.mp3, it is a binary file.
+staircase/cellar/rave_cave/drum_samples/clap_sample.mp3, it is a binary file.
+staircase/cellar/rave_cave/drum_samples/hh_sample.mp3, it is a binary file.
+staircase/cellar/rave_cave/index.html, code is 47, comment is 0, blank is 3.
+staircase/cellar/rave_cave/sketch.js, code is 120, comment is 1, blank is 25.
+staircase/cellar/rave_cave/style.css, code is 49, comment is 1, blank is 4.
+staircase/floor_1/cinema/index.html, code is 26, comment is 0, blank is 7.
+staircase/floor_1/cinema/style.css, code is 56, comment is 11, blank is 12.
+staircase/floor_1/library/desk/index.html, code is 32, comment is 0, blank is 6.
+staircase/floor_1/library/desk/style.css, code is 48, comment is 9, blank is 13.
+staircase/floor_1/library/fonts/PxPlus_VGA_SquarePx.ttf, it is a binary file.
+staircase/floor_1/library/fonts/PxPlus_VGA_SquarePx.woff, it is a binary file.
+staircase/floor_1/library/img/pirate.gif, it is a binary file.
+staircase/floor_1/library/img/squatted.png, it is a binary file.
+staircase/floor_1/library/img/utopia.jpg, it is a binary file.
+staircase/floor_1/library/readings/Everything_I_know_about_technocapitalism.pdf, it is a binary file.
+staircase/floor_1/library/readings/Mudu-2004-Antipode.pdf, code is 3583, comment is 6545, blank is 24.
+staircase/floor_1/library/readings/Mudu-2004-Antipode.rtf, code is 9, comment is 0, blank is 1.
+staircase/floor_1/library/readings/The de commodification of urban space and the occupied social centres in Italy.pdf, code is 300, comment is 228, blank is 21.
+staircase/meta-mezzanine/index.html, code is 18, comment is 0, blank is 3.
+style.css, code is 153, comment is 29, blank is 12.
+===============================================================================

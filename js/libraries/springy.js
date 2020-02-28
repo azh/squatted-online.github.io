@@ -334,10 +334,15 @@
 		this.damping = damping; // velocity damping factor
 		this.minEnergyThreshold = minEnergyThreshold || 0.01; //threshold used to determine render stop
 		this.maxSpeed = maxSpeed || Infinity; // nodes aren't allowed to exceed this speed
+		this.tickRate = 0.03
 
 		this.nodePoints = {}; // keep track of points associated with nodes
 		this.edgeSprings = {}; // keep track of springs associated with edges
 	};
+
+	Layout.ForceDirected.prototype.setTickRate = function(rate) {
+		this.tickRate = rate
+	}
 
 	Layout.ForceDirected.prototype.point = function(node) {
 		if (!(node.id in this.nodePoints)) {
@@ -504,7 +509,7 @@
 		if (onRenderStart !== undefined) { onRenderStart(); }
 
 		Springy.requestAnimationFrame(function step() {
-			t.tick(0.03);
+			t.tick(t.tickRate);
 
 			if (render !== undefined) {
 				render();

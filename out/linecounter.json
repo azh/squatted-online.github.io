@@ -1,0 +1,495 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "/home/azh/Dropbox/Programming/Repos/squatted-online.github.io",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2020-02-26 05:35:10",
+            "filesum": 68,
+            "codesum": 81044,
+            "commentsum": 40420,
+            "blanksum": 5944,
+            "statistics": {
+                "": {
+                    "code": 28,
+                    "comment": 19,
+                    "blank": 7
+                },
+                ".html": {
+                    "code": 697,
+                    "comment": 54,
+                    "blank": 79
+                },
+                ".css": {
+                    "code": 307,
+                    "comment": 51,
+                    "blank": 41
+                },
+                ".md": {
+                    "code": 45,
+                    "comment": 7,
+                    "blank": 33
+                },
+                ".json": {
+                    "code": 11,
+                    "comment": 1,
+                    "blank": 0
+                },
+                ".map": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".txt": {
+                    "code": 39,
+                    "comment": 1,
+                    "blank": 26
+                },
+                ".js": {
+                    "code": 76023,
+                    "comment": 33514,
+                    "blank": 5712
+                },
+                ".rtf": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".pdf": {
+                    "code": 3883,
+                    "comment": 6773,
+                    "blank": 45
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 7,
+                    "code": 28,
+                    "comment": 19,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 26,
+                    "code": 39,
+                    "comment": 1,
+                    "filename": "call-for-artists.txt"
+                },
+                {
+                    "filename": "garden/1.6daace69.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "garden/2.52a2e5ec.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "garden/3.dbde592f.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "garden/4.b799729b.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "garden/5.985abbc2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "garden/app.230c135e.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "garden/app.230c135e.js.map"
+                },
+                {
+                    "filename": "garden/HKGrotesk-Bold.f1c52a22.otf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "garden/HKGrotesk-Regular.ce3b4cfb.otf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "garden/index.html"
+                },
+                {
+                    "filename": "garden/Le_Murmure-Regular_web.58883cf8.woff2",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "garden/Le_Murmure-Regular_web.a0c62613.woff",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "garden/style.95210df6.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "garden/style.95210df6.css.map"
+                },
+                {
+                    "blank": 21,
+                    "code": 180,
+                    "comment": 10,
+                    "filename": "index copy.html"
+                },
+                {
+                    "blank": 28,
+                    "code": 246,
+                    "comment": 28,
+                    "filename": "index.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 147,
+                    "comment": 16,
+                    "filename": "index_orig.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 1,
+                    "filename": "js/custom_places.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 2,
+                    "filename": "js/libraries/jquery-3.4.0.min.js"
+                },
+                {
+                    "blank": 5280,
+                    "code": 66446,
+                    "comment": 27663,
+                    "filename": "js/libraries/p5.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "js/libraries/p5.min.js"
+                },
+                {
+                    "blank": 16,
+                    "code": 7665,
+                    "comment": 5202,
+                    "filename": "js/libraries/p5.sound.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 5,
+                    "comment": 22,
+                    "filename": "js/libraries/p5.sound.min.js"
+                },
+                {
+                    "blank": 120,
+                    "code": 426,
+                    "comment": 190,
+                    "filename": "js/libraries/p5.voronoi.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 116,
+                    "comment": 4,
+                    "filename": "js/libraries/rhill-voronoi-core.min.js"
+                },
+                {
+                    "blank": 116,
+                    "code": 488,
+                    "comment": 151,
+                    "filename": "js/libraries/springy.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 7,
+                    "filename": "js/libraries/Tone.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "js/scripts.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "js/squattonia/data.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 15,
+                    "comment": 3,
+                    "filename": "js/squattonia/entity.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 0,
+                    "comment": 70,
+                    "filename": "js/squattonia/game.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 1,
+                    "filename": "js/squattonia/gifts.js"
+                },
+                {
+                    "blank": 9,
+                    "code": 56,
+                    "comment": 5,
+                    "filename": "js/squattonia/main.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 5,
+                    "comment": 6,
+                    "filename": "js/squattonia/people.js"
+                },
+                {
+                    "blank": 33,
+                    "code": 93,
+                    "comment": 72,
+                    "filename": "js/squattonia/squattonia copy.js"
+                },
+                {
+                    "blank": 34,
+                    "code": 115,
+                    "comment": 81,
+                    "filename": "js/squattonia/squattonia.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "js/squattonia/ui.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 81,
+                    "comment": 5,
+                    "filename": "js/squattonia/ui/directory.js"
+                },
+                {
+                    "blank": 15,
+                    "code": 153,
+                    "comment": 3,
+                    "filename": "js/squattonia/ui/navigation.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 37,
+                    "comment": 1,
+                    "filename": "js/squattonia/ui/output.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 51,
+                    "comment": 1,
+                    "filename": "js/squattonia/ui/renderer.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 41,
+                    "comment": 1,
+                    "filename": "js/squattonia/util.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 65,
+                    "comment": 17,
+                    "filename": "js/squattonia/world.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "now.json"
+                },
+                {
+                    "blank": 33,
+                    "code": 45,
+                    "comment": 7,
+                    "filename": "README.md"
+                },
+                {
+                    "filename": "staircase/cellar/rave_cave/drum_samples/bass_sample.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/cellar/rave_cave/drum_samples/clap_sample.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/cellar/rave_cave/drum_samples/hh_sample.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "staircase/cellar/rave_cave/index.html"
+                },
+                {
+                    "blank": 25,
+                    "code": 120,
+                    "comment": 1,
+                    "filename": "staircase/cellar/rave_cave/sketch.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 49,
+                    "comment": 1,
+                    "filename": "staircase/cellar/rave_cave/style.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "staircase/floor_1/cinema/index.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 56,
+                    "comment": 11,
+                    "filename": "staircase/floor_1/cinema/style.css"
+                },
+                {
+                    "blank": 6,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "staircase/floor_1/library/desk/index.html"
+                },
+                {
+                    "blank": 13,
+                    "code": 48,
+                    "comment": 9,
+                    "filename": "staircase/floor_1/library/desk/style.css"
+                },
+                {
+                    "filename": "staircase/floor_1/library/fonts/PxPlus_VGA_SquarePx.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/floor_1/library/fonts/PxPlus_VGA_SquarePx.woff",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/floor_1/library/img/pirate.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/floor_1/library/img/squatted.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/floor_1/library/img/utopia.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "staircase/floor_1/library/readings/Everything_I_know_about_technocapitalism.pdf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 24,
+                    "code": 3583,
+                    "comment": 6545,
+                    "filename": "staircase/floor_1/library/readings/Mudu-2004-Antipode.pdf"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "staircase/floor_1/library/readings/Mudu-2004-Antipode.rtf"
+                },
+                {
+                    "blank": 21,
+                    "code": 300,
+                    "comment": 228,
+                    "filename": "staircase/floor_1/library/readings/The de commodification of urban space and the occupied social centres in Italy.pdf"
+                },
+                {
+                    "blank": 3,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "staircase/meta-mezzanine/index.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 153,
+                    "comment": 29,
+                    "filename": "style.css"
+                }
+            ]
+        }
+    ]
+}
