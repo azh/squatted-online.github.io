@@ -3,7 +3,7 @@
 // Things handy for multiple files
 
 window.UTIL = {
-    base_url: "http://localhost:3000/",
+    base_url: "https://modest-snyder-fa951c.netlify.com/",
 
     decToRGBA: n => [n >> 24 & 0xFF, n >> 16 & 0xFF, n >> 8 & 0xFF, n & 0xFF],
 
